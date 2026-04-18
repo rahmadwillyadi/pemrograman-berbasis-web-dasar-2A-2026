@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Kabupaten</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <nav class="bg-green-800/90 backdrop-blur text-white fixed w-full z-10">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="font-bold text-xl">Kabupaten Mojokerto</h1>
+      <ul class="flex gap-6 text-sm">
+        <li><a href="#" class="hover:text-yellow-300">Beranda</a></li>
+        <li><a href="#tentang" class="hover:text-yellow-300">Tentang</a></li>
+        <li><a href="#galeri" class="hover:text-yellow-300">Galeri</a></li>
+        <li><a href="#kontak" class="hover:text-yellow-300">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="relative h-screen flex items-center justify-center">
+    <img 
+      src="gambar/gunung.jpg"
+      alt="Wisata di Mojokerto"
+      class="absolute w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 text-center text-white p-8">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Selamat Datang di Kabupaten Mojokerto</h2>
+      <p class="text-lg">Keindahan alam, budaya, dan kehidupan yang damai</p>
+    </div>
+  </section>
+
+  <section id="tentang" class="container mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Tentang Mojokerto</h2>
+    <p class="max-w-2xl mx-auto text-gray-600 mb-8">
+      Kabupaten Mojokerto adalah Kabupaten yang dikelilingi oleh pegunungan hijau, sawah yang luas,
+      dan masyarakat yang ramah. Kabupaten ini memiliki potensi besar di bidang pertanian,
+      pariwisata, dan budaya lokal.
+    </p>
+
+    <div class="w-full max-w-md mx-auto h-[500px] rounded-xl overflow-hidden shadow-lg">
+      <img 
+        src="gambar/peta.jpg"
+        alt="Peta kabupaten"
+        class="w-full h-full object-contain bg-white">
+    </div>
+  </section>
+
+  <section id="galeri" class="bg-white py-16 px-6">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-10">Wisata di Mojokerto</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="rounded-xl overflow-hidden shadow-lg">
+          <img src="gambar/sumber.jpg" class="object-cover h-64 w-full" />
+          <figcaption class="text-sm text-gray-600 p-2 text-center">sumber gempong</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden shadow-lg">
+          <img src="gambar/candi.jpg" class="object-cover h-64 w-full" />
+          <figcaption class="text-sm text-gray-600 p-2 text-center">Situs Purbakala Trowulan</figcaption>
+        </figure>
+
+        <figure class="rounded-xl overflow-hidden shadow-lg">
+          <img src="gambar/pemandian.jpg" class="object-cover h-64 w-full" />
+          <figcaption class="text-sm text-gray-600 p-2 text-center">Pemandian Air panas Pacet</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="container mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Kontak</h2>
+    <p class="text-gray-600">Email: kabmojo@gmail.com</p>
+    <p class="text-gray-600">Telepon: 08123456789</p>
+  </section>
+
+  <footer class="bg-green-800 text-white text-center p-4">
+    <p>&copy; 2026 Kabupaten Mojokerto</p>
+  </footer>
+
+</body>
+</html>
