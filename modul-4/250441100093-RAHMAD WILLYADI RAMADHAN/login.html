@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <section class="flex flex-row h-screen">
+        <div class="flex flex-col justify-center items-center w-1/2 bg-[#5E7Ac4] px-16 text-white text-center">
+            <div class="mb-5">
+                <h1 class="text-5xl font-bold  leading-tight text-left">Hello Prospective Students</h1>
+                <div class="flex justify-center items-center">
+                    <img src="ASSET/UTS/gambar_login page.png" alt="" class="max-w-full h-auto drop-shadow-xl">
+                </div>
+                <p class="text-xl opacity-90 max-w-md text-left"> 
+                    Unlock your professional potential. Learn from industry leaders and stay ahead of the competition.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-1/2 bg-white h-screen justify-center items-center px-10">
+            <div class="w-full max-w-md">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold uppercase tracking-wide">LOGIN PAGE</h2>
+                    <p class="text-gray-500 mt-2">Masukkan Username dan Password Anda!</p>
+                </div>
+
+                <form id="loginForm" class="flex flex-col gap-4" novalidate>
+                    <div class="flex flex-col">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Email Address" 
+                            class="w-full px-4 py-3 rounded-lg border text-center border-gray-200 focus:ring-2 focus:ring-[#3852B4] focus:border-transparent font-bold outline-none placeholder:text-[#5E7Ac4]"
+                        >
+                        <span id="emailError" class="text-red-500 text-xs mt-1 hidden font-medium">Format email tidak valid atau kosong.</span>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Password" 
+                            class="w-full px-4 py-3 rounded-lg border text-center border-gray-200 focus:ring-2 focus:ring-[#3852B4] focus:border-transparent font-bold outline-none transition-all placeholder:text-[#5E7Ac4]"
+                        >
+                        <span id="passwordError" class="text-red-500 text-xs mt-1 hidden font-medium">Password minimal harus 6 karakter.</span>
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        class="w-full bg-[#3852B4] hover:bg-[#2d4294] text-white font-bold py-3 rounded-lg transition-colors shadow-md mt-2"
+                    >
+                        Login
+                    </button>
+
+                    <div class="flex items-center my-4">
+                        <div class="flex-grow border-t border-gray-200"></div>
+                        <span class="px-3 text-gray-400 text-xs uppercase font-medium">Or Login With</span>
+                        <div class="flex-grow border-t border-gray-200"></div>
+                    </div>
+
+                    <button 
+                        type="button" 
+                        class="w-full flex justify-center items-center gap-3 border border-gray-200 py-3 rounded-lg hover:bg-gray-50 transition-colors shadow-sm"
+                    >
+                        <img src="ASSET/UTS/google.png" alt="G" class="w-5 h-5" onerror="this.style.display='none'">
+                        <span class="text-gray-700 text-sm font-semibold">Sign in with Account Google</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {e.preventDefault();
+
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+
+            const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+            const passValid = password.value.trim().length >= 6;
+
+            const toggle = (input, errorId, valid) => {
+                document.getElementById(errorId).classList.toggle('hidden', valid);
+                input.classList.toggle('border-red-500', !valid);
+            };
+
+            toggle(email, 'emailError', emailValid);
+            toggle(password, 'passwordError', passValid);
+
+            if (emailValid && passValid) {
+                console.log("login valid", email.value);
+                alert('login berhasil')
+            }
+        });
+    </script>
+</body>
+</html>
